@@ -1,3 +1,4 @@
+from os import path
 from setuptools import setup, find_packages
 
 
@@ -12,34 +13,40 @@ for line in open('wsi_grasstools/__init__.py', 'r'):
 with open('VERSION.txt', 'w') as fp:
     fp.write(version)
 
-setup(name='wsi-grasstools',
-    version=version,
-    author='Michael Rahnis',
-    author_email='michael.rahnis@fandm.edu',
-    description='GRASS GIS scripts, with Click CLI, for hydologic flowline mapping.',
-    url='http://github.com/mrahnis/wsi-grasstools',
-    license='BSD',
-    packages=find_packages(exclude=['examples']),
-    include_package_data=True,
-    install_requires=[
-        'click',
-        'click-plugins',
-        'gdal'
-    ],
-    entry_points='''
-        [console_scripts]
-        grasstool=wsi_grasstools.cli.grasstool:cli
+current_directory = path.abspath(path.dirname(__file__))
+with open(path.join(current_directory, 'README.rst'), 'r') as f:
+    long_description = f.read()
 
-        [wsi_grasstools.subcommands]
-        sinks=wsi_grasstools.cli.sinks:sinks
-        hydrolines=wsi_grasstools.cli.hydrolines:hydrolines
-    ''',
-    keywords='gis, hydrology, mapping',
-    classifiers=[
-        'Development Status :: 3 - Alpha',
-        'License :: OSI Approved :: BSD License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Topic :: Scientific/Engineering :: GIS'
-    ]
-)
+
+setup(name='wsi-grasstools',
+      version=version,
+      author='Michael Rahnis',
+      author_email='mike@topomatrix.com',
+      description='GRASS GIS scripts, with Click CLI, for hydologic flowline mapping.',
+      long_description=long_description,
+      long_description_content_type='text/x-rst',
+      url='http://github.com/mrahnis/wsi-grasstools',
+      license='BSD',
+      packages=find_packages(exclude=['examples']),
+      include_package_data=True,
+      install_requires=[
+          'click',
+          'click-plugins'
+      ],
+      entry_points='''
+          [console_scripts]
+          grasstool=wsi_grasstools.cli.grasstool:cli
+
+          [wsi_grasstools.subcommands]
+          hydrolines=wsi_grasstools.cli.hydrolines:hydrolines
+          paths=wsi_grasstools.cli.paths:paths
+          sinks=wsi_grasstools.cli.sinks:sinks
+      ''',
+      keywords='gis, hydrology, mapping',
+      classifiers=[
+          'Development Status :: 3 - Alpha',
+          'License :: OSI Approved :: BSD License',
+          'Programming Language :: Python',
+          'Programming Language :: Python :: 2',
+          'Topic :: Scientific/Engineering :: GIS'
+      ])

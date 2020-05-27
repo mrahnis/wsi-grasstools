@@ -1,4 +1,4 @@
-$Env:GISBASE = "C:\Program Files\GRASS GIS 7.4.0"
+$Env:GISBASE = "C:\Program Files\GRASS GIS 7.4"
 $Env:GISRC = "${Env:USERPROFILE}\.grass74"
 $Env:GRASS_DB_ENCODING = "utf-8"
 $Env:PATH = "${Env:PATH};${Env:GISBASE}\bin;${Env:GISBASE}\scripts;${Env:GISBASE}\etc\python"

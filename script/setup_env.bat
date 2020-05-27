@@ -1,7 +1,7 @@
-set GISBASE=C:\Program Files\GRASS GIS 7.4.0
+set GISBASE=C:\Program Files\GRASS GIS 7.4
 set GISRC=%USERPROFILE%\.grass74
 set GRASS_DB_ENCODING="utf-8"
-set PATH=%PATH%;%GISBASE%\bin;%GISBASE%\scripts;%GISBASE%\etc\python
+set PATH=%PATH%;%GISBASE%\bin;%GISBASE%\scripts;%GISBASE%\etc\python;%GISBASE%\lib
 set LD_LIBRARY_PATH=%GISBASE%\lib
 set PYTHONPATH=%GISBASE%\Python27
 set PYTHONLIB=%GISBASE%\etc\python

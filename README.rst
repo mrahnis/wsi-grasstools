@@ -1,6 +1,6 @@
 install
 =======
-conda create -n grass python=2.7 gdal libssh2
+conda create -n grass python=2.7 gdal libssh2 click
 
 
 sinks.py

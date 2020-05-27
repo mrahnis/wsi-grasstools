@@ -38,7 +38,7 @@ def setup_env():
 
     # update the path for the current environment
     sys.path.append(os.path.join(gisbase, 'bin'))
-    # sys.path.append(os.path.join(gisbase, "etc", "python"))
+    sys.path.append(os.path.join(gisbase, "etc", "python"))
     sys.path.append(os.path.join(gisbase, 'scripts'))
 
     return gisbase, gisdbdir
